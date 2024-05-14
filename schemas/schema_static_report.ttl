@@ -1,0 +1,125 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix pht: <http://schema.padme-analytics.de#> .
+@prefix phtc: <http://schema.padme-analytics.de/credentials/#> .
+@prefix : <http://schema.padme-analytics.de/credentials/shapes/#> .
+
+:StaticReportClassShape a sh:NodeShape ;
+    sh:targetClass phtcred:StaticAnalysisCredential ;
+	rdfs:label "Static analyses credential" ;
+    sh:property [
+        sh:path pht:analysedTrainClass ;
+        sh:name "Analysed Train Class" ;
+        sh:class pht:TrainCLass ;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ]
+	sh:property [
+		sh:path pht:sast_critical ;
+		sh:name "Sast critical" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:sast_high ;
+		sh:name "Sast high" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:sast_medium ;
+		sh:name "Sast medium" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:sast_low ;
+		sh:name "Sast low" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:secret_detection_critical ;
+		sh:name "Secret detection critical" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:secret_detection_high ;
+		sh:name "Secret detection high" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:secret_detection_medium ;
+		sh:name "Secret detection medium" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:secret_detection_low ;
+		sh:name "Secret detection low" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:dependency_scanning_critical ;
+		sh:name "Dependency scanning critical" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:dependency_scanning_high ;
+		sh:name "Dependency scanning high" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:dependency_scanning_medium ;
+		sh:name "Dependency scanning medium" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:dependency_scanning_low ;
+		sh:name "Dependency scanning low" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:static_nlines ;
+		sh:name "Number of lines" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:static_vuln_per_line ;
+		sh:name "Vulnebarility per lines" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+    sh:property [
+		sh:path pht:static_score;
+		sh:name "Score" ;
+        sh:datatype xsd:int;
+		sh:minCount 1;
+        sh:maxCount 1;
+	] ;
+

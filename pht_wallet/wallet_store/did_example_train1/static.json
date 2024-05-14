@@ -1,0 +1,34 @@
+{
+"@context":
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#StaticAnalysisCredential"
+    }
+},
+"id": "did:example:staticanalysisCredential3245",
+"type": ["VerifiableCredential","StaticAnalysisCredential"],
+"issuer": "did:example:padmeSecurityPipeline",
+"issuanceDate": "2020-08-19T21:44:20Z",
+"credentialSubject": {
+    "id": "did:example:staticanalysis91283",
+    "pht:analysedTrainClass": "did:example:breast_cancer_train",
+    "pht:sast_critical": 0,
+    "pht:sast_high": 0,
+    "pht:sast_medium": 0,
+    "pht:sast_low": 2,
+    "pht:secret_detection_critical" : 0,
+    "pht:secret_detection_high": 0,
+    "pht:secret_detection_medium":0,
+    "pht:secret_detection_low": 0,
+    "pht:dependency_scanning_critical": 0,
+    "pht:dependency_scanning_high": 0,
+    "pht:dependency_scanning_medium": 0,
+    "pht:dependency_scanning_low": 4,
+    "pht:static_nlines": 255,
+    "pht:static_vuln_per_line": 0.0235,
+    "pht:static_score": 0.96
+}
+}

@@ -1,0 +1,32 @@
+{
+"@context": 
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#TrainCredential"
+    }
+},
+"id": "did:example:trainCredential1",
+"type": ["VerifiableCredential","TrainCredential"],
+"issuer": "did:example:some_researcher",
+"issuanceDate": "2020-08-19T21:41:50Z",
+"credentialSubject": {
+    "id": "did:example:train_instance",
+    "label": "Breast cancer detection model train.",
+    "comment": "This train is used for some research regarding breast cancer detection.",
+    "pht:ownedBy": "did:example:researcher1",
+    "pht:instantiatedFrom": "did:example:breast_cancer_train",
+    "pht:plannedHalt": [
+        {
+        "pht:haltOrder": 0,
+        "pht:haltAtStation": "did:example:station_uka_diz"
+        },
+        {
+        "pht:haltOrder": 1,
+        "pht:haltAtStation": "did:example:station_rwth"
+        }
+    ]
+}
+}

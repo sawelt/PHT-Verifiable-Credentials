@@ -1,0 +1,51 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix pht: <http://schema.padme-analytics.de#> .
+@prefix phtc: <http://schema.padme-analytics.de/credentials/#> .
+@prefix : <http://schema.padme-analytics.de/credentials/shapes/#> .
+
+:TrainClassShape a sh:NodeShape ;
+    sh:targetClass phtcred:TrainClassCredential ;
+	rdfs:label "Train class Shape" ;
+	sh:property [
+		sh:path rdfs:label ;
+		sh:name "label" ;
+		sh:description "Human meaningful name for train class" ;
+		sh:minCount 1
+	] ;
+	sh:property [
+		sh:path rdfs:comment ;
+		sh:name "comment" ;
+		sh:description "Human meaningful description for the train class";
+		sh:minCount 1
+	];
+    sh:property [
+        sh:path pht:createdBy ;
+        sh:name "Creator";
+        sh:description "Creator of this train class. Should be a did and the issuer of this credential.";
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path pht:derivedFrom;
+        sh:name "TrainClass";
+        sh:minCount 0;
+        sh:maxCount 1;
+        sh:class pht:TrainClass
+    ];
+    sh:property [
+        sh:path pht:initialState;
+        sh:name "Initial State";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class pht:State
+    ];
+    sh:property [
+        sh:path pht:creationDate;
+        sh:datatype xsd:dateTime
+    ] .
+
+

@@ -1,0 +1,23 @@
+{
+"@context":
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#TrainCredential"
+    }
+},
+"id": "did:example:visitCredential1",
+"type": ["VerifiableCredential","VisitCredential"],
+"issuer": "did:example:station_uka_diz",
+"issuanceDate": "2023-07-19T21:41:50Z",
+"credentialSubject": {
+    "id": "did:example:visit19287312",
+    "pht:inputState": "did:example:state12863612",
+    "pht:visitedStation": "did:example:station_uka_diz",
+    "pht:yieldedState": "did:example:state19238716",
+    "pht:trainVisiting": "did:example:train_instance",
+    "pht:visitDate": "2023-07-25T15:05:23"
+}
+}

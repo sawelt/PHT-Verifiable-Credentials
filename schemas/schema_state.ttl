@@ -1,0 +1,38 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix pht: <http://schema.padme-analytics.de#> .
+@prefix phtc: <http://schema.padme-analytics.de/credentials/#> .
+@prefix : <http://schema.padme-analytics.de/credentials/shapes/#> .
+
+:StateShape a sh:NodeShape ;
+	rdfs:label "State Shape" ;
+    sh:targetClass phtcred:StateCredential ;
+    sh:property [
+        sh:path pht:emittedBy ;
+        sh:name "Emitted by station";
+        sh:description "DID identifier of the Station which emitted this state. Not defined if this is the initial 'buttom' state. If defined, should be also issuer of the credential. Otherwise Issuer should be TrainCreator" ;
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path pht:stateChecksum ;
+        sh:description "Checksum of a state" ;
+        sh:datatype xsd:string;
+    ];
+    sh:property [
+        sh:path pht:checksumAlgorithm ;
+        sh:description "Specifies the algorithm used to calculate the checksum." ;
+        sh:in (
+            pht:SHA256Checksum 
+        ) ;
+    ];
+    sh:property [
+        sh:path pht:creationDate;
+        sh:description "Creation date of the state.";
+        sh:datatype xsd:dateTime;
+    ] .
+
+

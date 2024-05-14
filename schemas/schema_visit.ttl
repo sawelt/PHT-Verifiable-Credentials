@@ -1,0 +1,50 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix pht: <http://schema.padme-analytics.de#> .
+@prefix phtc: <http://schema.padme-analytics.de/credentials/#> .
+@prefix : <http://schema.padme-analytics.de/credentials/shapes/#> .
+
+:VisitShape a sh:NodeShape ;
+	rdfs:label "Visit Shape" ;
+    sh:targetClass phtcred:VisitCredential ;
+    sh:property [
+        sh:path pht:inputState ;
+        sh:name "Input state";
+        sh:description "State used as an input for this visit." ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class pht:State;
+    ];
+    sh:property [
+        sh:path pht:yieldedState ;
+        sh:name "Yielded state";
+        sh:description "State produced from this visit." ;
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class pht:State;
+    ];
+    sh:property [
+        sh:path pht:visitedStation;
+        sh:name "Visited Station";
+        sh:description "Station that was visited. Should be Issuer of this credential.";
+        sh:minCount 1;
+        sh:maxCount 1;
+    ];
+    sh:property [
+        sh:path pht:trainVisiting;
+        sh:name "visiting Train";
+        sh:description "Train that has done this visit.";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class pht:Train;
+    ];
+    sh:property [
+        sh:path pht:visitDate;
+        sh:description "Timestamp of the visit.";
+        sh:datatype xsd:dateTime;
+    ] .
+
+

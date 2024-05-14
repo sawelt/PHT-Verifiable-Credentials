@@ -1,0 +1,57 @@
+@prefix rdf:  <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix sh:   <http://www.w3.org/ns/shacl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+@prefix pht: <http://schema.padme-analytics.de#> .
+@prefix phtc: <http://schema.padme-analytics.de/credentials/#> .
+@prefix : <http://schema.padme-analytics.de/credentials/shapes/#> .
+
+:TrainShape a sh:NodeShape ;
+    sh:targetClass phtcred:TrainCredential ;
+	rdfs:label "Train Shape" ;
+	sh:property [
+		sh:path rdfs:label ;
+		sh:name "label" ;
+		sh:description "Human meaningful name for train instance" ;
+		sh:minCount 1
+	] ;
+	sh:property [
+		sh:path rdfs:comment ;
+		sh:name "comment" ;
+		sh:description "Human meaningful description for train instance";
+		sh:minCount 1
+	];
+    sh:property [
+        sh:path pht:ownedBy ;
+        sh:name "Owner";
+        sh:minCount 1
+    ];
+    sh:property [
+        sh:path pht:instantiatedFrom;
+        sh:name "TrainClass";
+        sh:minCount 1;
+        sh:maxCount 1;
+        sh:class pht:TrainClass
+    ];
+    sh:property [
+        sh:path pht:creationDate;
+        sh:datatype xsd:dateTime
+    ];
+    sh:property [
+        sh:path pht:plannedHalt;
+        sh:class pht:PlannedHalt
+    ].
+
+:PlannedHaltShape a sh:NodeShape;
+    sh:targetClass pht:PlannedHalt;
+    rdfs:label "Planned Halt" ;
+    sh:property [
+        sh:path pht:haltOrder;
+        sh:datatype xsd:int
+    ];
+    sh:property [
+        sh:path pht:haltAtStation;
+        sh:class pht:Station 
+    ].
+

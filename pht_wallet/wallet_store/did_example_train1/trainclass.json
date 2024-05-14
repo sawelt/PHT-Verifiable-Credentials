@@ -1,0 +1,23 @@
+{
+"@context":
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainClassCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#TrainClassCredential"
+    }
+},
+"id": "did:example:trainClassCredential1",
+"type": ["VerifiableCredential","TrainClassCredential"],
+"issuer": "did:example:some_researcher",
+"issuanceDate": "2020-08-19T21:41:50Z",
+"credentialSubject": {
+    "id": "did:example:breast_cancer_train",
+    "label": "Breast Cancer detection train",
+    "comment": "This trainclass contains an algorithm for detecting breast cancer from MRI images. It is trained on any data provided by the station.",
+    "pht:createdBy": "did:example:trainCreator1",
+    "pht:initialState": "did:example:state12863612",
+    "pht:creationDate": "2023-07-10T20:12:15"
+}
+}

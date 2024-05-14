@@ -1,0 +1,2 @@
+<div class="id attribute"><label>Subject:</label><span class="value">${credential.subject_id}</span></div>
+<div class="issuer attribute"><label>Issuer:</label><span class="value">${credential.issuer}</span></div>

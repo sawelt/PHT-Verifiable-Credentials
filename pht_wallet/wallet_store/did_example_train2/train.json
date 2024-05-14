@@ -1,0 +1,28 @@
+{
+"@context": 
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#TrainCredential"
+    }
+},
+"id": "did:example:trainCredential2",
+"type": ["VerifiableCredential","TrainCredential"],
+"issuer": "did:example:trainuser2",
+"issuanceDate": "2020-05-10T18:41:50Z",
+"credentialSubject": {
+    "id": "did:example:train1",
+    "label": "Data train",
+    "comment": "Train for analysing the data",
+    "pht:ownedBy": "did:example:trainuser2",
+    "pht:instantiatedFrom": "did:example:trainclass",
+    "pht:plannedHalt": [
+        {
+        "pht:haltOrder": 0,
+        "pht:haltAtStation": "did:example:station1"
+        }
+    ]
+}
+}

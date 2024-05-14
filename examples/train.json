@@ -1,0 +1,22 @@
+{
+"@context": 
+{
+    "@vocab": "https://www.w3.org/2018/credentials/v1",
+    "pht": "http://schema.padme-analytics.de#",
+    "rdfs": "https://www.w3.org/TR/rdf-schema/#",
+    "TrainCredential": {
+        "@id": "http://schema.padme-analytics.de/credentials/#TrainCredential"
+    }
+},
+"id": "did:example:trainCredential1",
+"type": ["VerifiableCredential","TrainCredential"],
+"issuer": "did:example:trainuser1",
+"issuanceDate": "2020-08-19T21:41:50Z",
+"credentialSubject": {
+    "id": "did:example:train1",
+    "label": "Mein erster Zug!",
+    "comment": "Ein toller zug ist das.",
+    "pht:ownedBy": "did:example:me",
+    "pht:instantiedFrom": "did:example:trainclass"
+}
+}
